@@ -9,6 +9,19 @@ public class GettingHotInHere {
         // The instantiation code for a Scanner instance.
         Scanner scanner = new Scanner(System.in);
         System.out.print("What is the temperature in °F: ");
-        int number = scanner.nextInt();
+
+        int tempF = scanner.nextInt();
+
+        double tempC = (tempF - 32) * 5 / 9.0;
+
+        String output = """
+                Temperature: %d°F%n=%.6f°C
+                
+                Int: %d°C
+                          
+                If it were 2°C warmer it would be %d°C
+                """;
+
+        System.out.printf(output, tempF, tempC, (int) tempC, 2 + (int) tempC);
     }
 }
